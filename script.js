@@ -10,6 +10,9 @@ searchIcon.addEventListener("click", function () {
       item.style.display = "";
     } else {
       item.style.display = "none";
+      item.style.display = "none";
+      item.style.display = "none";
+      item.style.display = "none";
     }
   });
 });
@@ -36,7 +39,7 @@ const popupInputValue = document.querySelector(".popup-input");
 const popupTextAreaValue = document.querySelector(".popup-textarea");
 const outerContainer = document.querySelector(".outer-container");
 popupAddButton.addEventListener("click", function () {
-  if (popupInputValue.value !== " " && popupTextAreaValue.value !== " ") {
+  if (!popupInputValue.value == " " && !popupTextAreaValue.value == " ") {
     const nestedElement = `
     <div class="card">
       <dl class="inner-container">
@@ -46,7 +49,7 @@ popupAddButton.addEventListener("click", function () {
         </dd>
       </dl>
       <div class="short-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, animi.
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, animi</p>
       </div>
     </div>`;
     outerContainer.insertAdjacentHTML(

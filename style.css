@@ -22,8 +22,9 @@ body {
 .search-area {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
+    gap: 10px;
 }
 
 .search-box {
@@ -31,63 +32,60 @@ body {
     outline: 0;
     border-radius: 3px;
     height: 30px;
+    width: 1000px;
 }
 .search-icon, .add-icon{
     cursor: pointer;
+
 }
 .outer-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .card{
-    position: relative;
-    width: 200px;
-    height: 200px;
+    position: relative;   
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-/* .card:hover{
-    transform: rotateY(180deg);
-} */
-.inner-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-    border: 1px solid green;
-    border-radius: 5px;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-    backface-visibility: hidden;
-}
-.short-description{
-    backface-visibility: hidden;
-    position: absolute;
-    top: 10%;
-    width: 150px;
-    height: 150px;
-    transform: rotateY(180deg);
-    border: 1px solid green;
-    border-radius: 5px;
-    cursor: pointer;
 
+.inner-container {
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    width: 300px;
+    height: 400px;
 }
 .descriptive-term {
-    padding: 5px 0;
-    font-weight: 600;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid green;
 }
 
 .descriptive-data {
     margin: 0;
-    padding: 0 5px;
-    border-top: 1px solid green;
+    padding: 20px;
 }
+
+.short-description{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 4%;
+    width: 300px;
+    height: 400px;
+    transform: rotateY(180deg);
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.description{
+    margin: 40px;
+}
+
 
 .popup-content {
     background-color: rgb(0, 0, 0, 0.9);
@@ -125,7 +123,7 @@ body {
     margin: 0 10px;
 }
 
-@media (min-width: 425px){
+/* @media (min-width: 425px){
     .search-box {
         width: 200px;
     }
@@ -147,4 +145,4 @@ body {
     .search-box {
         width: 700px;
     }
-}
+} */
