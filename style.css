@@ -13,7 +13,8 @@ body {
 }
 
 .main {
-    margin: 10px 30px;
+    margin: 10px 0;
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -32,7 +33,7 @@ body {
     outline: 0;
     border-radius: 3px;
     height: 30px;
-    width: 1000px;
+    width: 800px;
 }
 .search-icon, .add-icon{
     cursor: pointer;
@@ -41,8 +42,7 @@ body {
 .outer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: flex-start;
 }
 
 .card{

@@ -1,28 +1,45 @@
 const searchIcon = document.querySelector(".search-icon");
 const searchInput = document.querySelector(".search-box");
 
-searchIcon.addEventListener("click", function () {
+
+const addIcon = document.querySelector('.add-icon');
+const popupContent = document.querySelector('.popup-content');
+
+const popupAddButton = document.querySelector('.popup-add-button');
+const popupInputValue = document.querySelector('.popup-input');
+const popupTextAreaValue = document.querySelector('.popup-textarea');
+const outerContainer = document.querySelector('.outer-container');
+
+
+//search function
+function filterItems(){
   let input = searchInput.value.toLowerCase();
   let items = document.querySelectorAll(".inner-container");
 
-  items.forEach((item) => {
-    if (item.textContent.toLowerCase().includes(input)) {
-      item.style.display = "";
-    } else {
-      item.style.display = "none";
-      item.style.display = "none";
-      item.style.display = "none";
-      item.style.display = "none";
-    }
-  });
-});
+  if (input === '') {
+    // If input is empty, show all items
+    items.forEach((item) => {
+      item.style.display = 'block';
+    });
+  }
+  else {
+    items.forEach((item) => {
+      if (item.textContent.toLowerCase().includes(input)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+};
+searchIcon.addEventListener('click', filterItems);
+searchInput.addEventListener('input',filterItems);
 
-const addIcon = document.querySelector(".add-icon");
-const popupContent = document.querySelector(".popup-content");
+//add recipe - shows the add form
 addIcon.addEventListener("click", function () {
   popupContent.style.visibility = "visible";
 });
-
+//clear the add recipe form
 document.addEventListener("click", (event) => {
   if (event.target !== addIcon && event.target !== popupContent) {
     popupContent.style.visibility = "hidden";
@@ -34,10 +51,7 @@ popupContent.addEventListener('click', function (event) {
 })
 
 
-const popupAddButton = document.querySelector(".popup-add-button");
-const popupInputValue = document.querySelector(".popup-input");
-const popupTextAreaValue = document.querySelector(".popup-textarea");
-const outerContainer = document.querySelector(".outer-container");
+// add recipes to the outer container
 popupAddButton.addEventListener("click", function () {
   if (!popupInputValue.value == " " && !popupTextAreaValue.value == " ") {
     const nestedElement = `
@@ -63,6 +77,7 @@ popupAddButton.addEventListener("click", function () {
 
 outerContainer.addEventListener("click", handleClickEvent);
 
+// rotation of the card
 function handleClickEvent(event) {
   // Check if the clicked element or its parent has the class "card"
   const item = event.target.closest(".card");
